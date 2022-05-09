@@ -6,6 +6,10 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import SurveyPage from "./pages/SurveyPage/SurveyPage";
+import RegularBox from "./pages/SnackBoxes/RegularBox";
+import SavoryBox from "./pages/SnackBoxes/SavoryBox";
+import SweetBox from "./pages/SnackBoxes/SweetBox";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -29,6 +33,10 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/survey" element={<SurveyPage />} />
+        <Route path="/regular" element={<RegularBox />} />
+        <Route path="/savory" element={<SavoryBox />} />
+        <Route path="/sweet" element={<SweetBox />} />
       </Routes>
       <Footer />
     </div>

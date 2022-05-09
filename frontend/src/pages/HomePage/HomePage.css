@@ -1,0 +1,10 @@
+.center {
+    margin: 2em;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    height: 500px;
+}

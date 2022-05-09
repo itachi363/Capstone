@@ -1,6 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import "./HomePage.css"
+import bokksuone from "../Images/bokksuone.jpg"
+import bokksutwo from "../Images/bokksutwo.jpg"
+import bokksuthree from "../Images/bokksuthree.jpg"
 
 import axios from "axios";
 
@@ -26,17 +30,38 @@ const HomePage = () => {
     };
     fetchCars();
   }, [token]);
+
   return (
-    <div className="container">
-      <h1>Home Page for {user.username}!</h1>
-      {cars &&
-        cars.map((car) => (
-          <p key={car.id}>
-            {car.year} {car.make} {car.model}
-          </p>
-        ))}
+    <div>
+      <div>
+        <img src={bokksuone} className="box"></img>
+      </div>
+      <div className="center">
+        <p>The best box of japanese snacks you can enjoy.</p>
+      </div>
+      <div>
+        <img src={bokksutwo} className="box"></img>
+      </div>
+      <div className="center">
+        <p>With four seasons of snacks.</p>
+      </div>
+      <div>
+        <img src={bokksuthree} className="box"></img>
+      </div>
+      <div className="center">
+        <p>With up to 24 snacks per box.</p>
+      </div>
+      <div>
+        {/* {cars &&
+          cars.map((car) => (
+            <p key={car.id}>
+              {car.year} {car.make} {car.model}
+            </p>
+          ))} */}
+      </div>
     </div>
   );
+
 };
 
 export default HomePage;

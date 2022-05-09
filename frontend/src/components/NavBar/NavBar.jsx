@@ -8,22 +8,29 @@ const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
   return (
-    <div className="navBar">
-      <ul>
-        <li className="brand">
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>React/Django JWT</b>
-          </Link>
-        </li>
-        <li>
-          {user ? (
-            <button onClick={logoutUser}>Logout</button>
-          ) : (
-            <button onClick={() => navigate("/login")}>Login</button>
-          )}
-        </li>
-      </ul>
-    </div>
+    <header className="fixed">
+      <div className="navBar">
+        <ul>
+          <li className="brand">
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+              <b>Snack Box</b>
+            </Link>
+          </li>
+          <li>
+            <Link to="/survey" style={{ textDecoration: "none", color: "white" }}>
+              <b>Survey</b>
+            </Link>
+          </li>
+          <li>
+            {user ? (
+              <button onClick={logoutUser}>Logout</button>
+            ) : (
+              <button onClick={() => navigate("/login")}>Login</button>
+            )}
+          </li>
+        </ul>
+      </div>
+    </header>
   );
 };
 
