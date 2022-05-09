@@ -1,11 +1,11 @@
-import bokksutwo from "../Images/bokksutwo.jpg"
+import bokksuone from "../Images/bokksuone.jpg"
 import "./Box.css"
 
 const SavoryBox = () => {
     return ( 
         <div>
-            <img src={bokksutwo} className="boxes"></img>
-            <p>we reccomend the savory box.</p>
+            <img src={bokksuone} className="boxes"></img>
+            <p>we recommend the savory box.</p>
         </div>
      );
 }

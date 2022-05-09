@@ -1,6 +1,5 @@
 import React, {useState} from "react"
-import { useNavigate, Link } from "react-router-dom";
-import Toggle from "./Toggle";
+import { useNavigate } from "react-router-dom";
 import "./SurveyPage.css"
 
 const SurveyPage = () => {
@@ -8,20 +7,30 @@ const SurveyPage = () => {
 
     const [flavor, setFlavor] = useState('');
 
-    const handleChange = (e) => {
-        setFlavor(e.target.value);
-    }
-
-    const handleSubmit = (e) => {
-        if(flavor == "sweet")
+    function handleSubmit(){
+        if(flavor == "sweet") {
             navigate("/sweet")
+        }
+
+        else if(flavor == "seasonal") {
+            navigate("/seasonal")
+        }
+
+        else if(flavor == "savory") {
+            navigate("/savory")
+        }
         else {
             console.log(flavor)
         }
     }
 
+    const handleChange = (e) => {
+        setFlavor(e.target.value);
+    }
+
+
     return ( 
-        <form onSubmit={handleSubmit()}>
+        <form onSubmit={handleSubmit}>
             <div className="center">
                 <div>
                     <h2>
@@ -42,9 +51,6 @@ const SurveyPage = () => {
                     <p>Do you like savory snacks</p>
                     <input type="radio" id="savory" onChange={handleChange} name="fav_flavor" value="savory"/>
                     <label for="savory">Savory</label> 
-                </div>
-                <div>
-                    <p> your flavor is {flavor}</p>
                 </div>
                 <div>
                     <button type="submit">Submit</button>

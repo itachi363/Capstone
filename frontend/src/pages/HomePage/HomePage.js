@@ -36,19 +36,19 @@ const HomePage = () => {
       <div>
         <img src={bokksuone} className="box"></img>
       </div>
-      <div className="center">
+      <div className="spacing">
         <p>The best box of japanese snacks you can enjoy.</p>
       </div>
       <div>
         <img src={bokksutwo} className="box"></img>
       </div>
-      <div className="center">
+      <div className="spacing">
         <p>With four seasons of snacks.</p>
       </div>
       <div>
         <img src={bokksuthree} className="box"></img>
       </div>
-      <div className="center">
+      <div className="spacing">
         <p>With up to 24 snacks per box.</p>
       </div>
       <div>

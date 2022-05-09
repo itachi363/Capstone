@@ -7,7 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import SurveyPage from "./pages/SurveyPage/SurveyPage";
-import RegularBox from "./pages/SnackBoxes/RegularBox";
+import SeasonalBox from "./pages/SnackBoxes/SeasonalBox";
 import SavoryBox from "./pages/SnackBoxes/SavoryBox";
 import SweetBox from "./pages/SnackBoxes/SweetBox";
 
@@ -34,9 +34,9 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/survey" element={<SurveyPage />} />
-        <Route path="/regular" element={<RegularBox />} />
-        <Route path="/savory" element={<SavoryBox />} />
         <Route path="/sweet" element={<SweetBox />} />
+        <Route path="/seasonal" element={<SeasonalBox />} />
+        <Route path="/savory" element={<SavoryBox />} />
       </Routes>
       <Footer />
     </div>
