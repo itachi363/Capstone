@@ -2,18 +2,26 @@ import React, {useState} from "react"
 import { useNavigate, Link } from "react-router-dom";
 import Toggle from "./Toggle";
 import "./SurveyPage.css"
-import "./script.js"
 
 const SurveyPage = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    // function handleSubmit(event) {
-    //     event.preventDefault();
-    //     console.log(value)
-    // }
+    const [flavor, setFlavor] = useState('');
+
+    const handleChange = (e) => {
+        setFlavor(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        if(flavor == "sweet")
+            navigate("/sweet")
+        else {
+            console.log(flavor)
+        }
+    }
 
     return ( 
-        <form>
+        <form onSubmit={handleSubmit()}>
             <div className="center">
                 <div>
                     <h2>
@@ -22,23 +30,25 @@ const SurveyPage = () => {
                 </div>
                 <div>
                     <p>Do you like sweet candy</p>
-                    <input type="radio" id="sweet" name="fav_flavor" value="sweet"/>
+                    <input type="radio" id="sweet" onChange={handleChange} name="fav_flavor" value="sweet"/>
                     <label for="sweet">Sweet</label> 
                 </div>
                 <div>
                     <p>Do you like seasonal candy</p>
-                    <input type="radio" id="seasonal" name="fav_flavor" value="seasonal"/>
+                    <input type="radio" id="seasonal" onChange={handleChange} name="fav_flavor" value="seasonal"/>
                     <label for="seasonal">Seasonal</label> 
                 </div>
                 <div>
                     <p>Do you like savory snacks</p>
-                    <input type="radio" id="savory" name="fav_flavor" value="savory"/>
+                    <input type="radio" id="savory" onChange={handleChange} name="fav_flavor" value="savory"/>
                     <label for="savory">Savory</label> 
                 </div>
                 <div>
-                    <button>Submit</button>
+                    <p> your flavor is {flavor}</p>
                 </div>
-                <script src="script.js"></script>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
             </div>
         </form>
      );
