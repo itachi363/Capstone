@@ -3,14 +3,26 @@ import { useNavigate } from "react-router-dom"
 import bokksuthree from "../Images/bokksuthree.jpg"
 import "./Box.css"
 
-const SweetBox = () => {
+const SweetBox = (props) => {
     const navigate = useNavigate();
 
     const [size, setSize] = useState('');
 
-    function handleSubmit(){
+    function handleSubmit(event) {
+        event.preventDefault()
+        let newEntry = {
+            size: size,
+            flavor: "Sweet"
+        }
+        props.addSize(newEntry)
         if(size == "16") {
-            console.log(size)
+            navigate("/purchaseS")
+        }
+        else if(size == "20") {
+            navigate("/purchaseM")
+        }
+        else if(size == "24") {
+            navigate("/purchaseL")
         }
         else {
             console.log(size)
@@ -37,17 +49,17 @@ const SweetBox = () => {
                     <div>
                         <p>Do you want 16 snacks?</p>
                         <input type="radio" id="16" onChange={handleChange} name="box_size" value="16"/>
-                        <label for="sweet">16 snacks</label> 
+                        <label for="16">16 snacks</label> 
                     </div>
                     <div>
                         <p>Do you want 20 snacks?</p>
                         <input type="radio" id="20" onChange={handleChange} name="box_size" value="20"/>
-                        <label for="seasonal">20 snacks</label> 
+                        <label for="20">20 snacks</label> 
                     </div>
                     <div>
                         <p>Do you want 24 snacks?</p>
                         <input type="radio" id="24" onChange={handleChange} name="box_size" value="24"/>
-                        <label for="savory">24 snacks</label> 
+                        <label for="24">24 snacks</label> 
                     </div>
                     <div>
                         <button type="submit">Submit</button>

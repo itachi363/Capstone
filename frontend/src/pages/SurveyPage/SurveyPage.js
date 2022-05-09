@@ -11,11 +11,9 @@ const SurveyPage = () => {
         if(flavor == "sweet") {
             navigate("/sweet")
         }
-
         else if(flavor == "seasonal") {
             navigate("/seasonal")
         }
-
         else if(flavor == "savory") {
             navigate("/savory")
         }
