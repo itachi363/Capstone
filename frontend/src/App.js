@@ -22,6 +22,8 @@ import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 import React, {useState} from "react"
 
+
+
 function App() {
 
   const [sizeHandler, setSizeHandler] = useState('');
