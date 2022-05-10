@@ -21,6 +21,8 @@ import Footer from "./components/Footer/Footer";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 import React, {useState} from "react"
+import {PayPalScriptProvider} from "@paypal/react-paypal-js"
+import PaypalCheckoutButton from "./components/Paypal/Paypal";
 
 
 
@@ -34,29 +36,31 @@ function App() {
   }
 
   return (
-    <div>
-      <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <HomePage />
-            </PrivateRoute>
-          }
-        />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/survey" element={<SurveyPage />} />
-        <Route path="/sweet" element={<SweetBox addSize={addSize}/>} />
-        <Route path="/seasonal" element={<SeasonalBox addSize={addSize}/>} />
-        <Route path="/savory" element={<SavoryBox addSize={addSize}/>} />
-        <Route path="/purchaseS" element={<SmallPurchasePage sizeHandler={sizeHandler}/>} />
-        <Route path="/purchaseM" element={<MediumPurchasePage sizeHandler={sizeHandler}/>} />
-        <Route path="/purchaseL" element={<LargePurchasePage sizeHandler={sizeHandler}/>} />
-      </Routes>
-      <Footer />
-    </div>
+    <PayPalScriptProvider options={{"client-id": process.env.REACT_APP_PAYPAL_VLIENT_ID}}>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PrivateRoute>
+                <HomePage />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/survey" element={<SurveyPage />} />
+          <Route path="/sweet" element={<SweetBox addSize={addSize}/>} />
+          <Route path="/seasonal" element={<SeasonalBox addSize={addSize}/>} />
+          <Route path="/savory" element={<SavoryBox addSize={addSize}/>} />
+          <Route path="/purchaseS" element={<SmallPurchasePage sizeHandler={sizeHandler}/>} />
+          <Route path="/purchaseM" element={<MediumPurchasePage sizeHandler={sizeHandler}/>} />
+          <Route path="/purchaseL" element={<LargePurchasePage sizeHandler={sizeHandler}/>} />
+        </Routes>
+        <Footer />
+      </div>
+    </PayPalScriptProvider>
   );
 }
 

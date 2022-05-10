@@ -1,6 +1,13 @@
 import purchasebokksu from "../Images/purchasebokksu.jpg"
+import PaypalCheckoutButton from "../../components/Paypal/Paypal";
 
 const SmallPurchasePage = (props) => {
+    const product = {
+        description: "design+Code React Hooks Course",
+        price: 20
+    }
+
+
     return ( 
         <div>
             <div>
@@ -24,8 +31,9 @@ const SmallPurchasePage = (props) => {
                 )
             })}
             
-            <script src="https://www.paypal.com/sdk/js?client-id=AYmNEAqrwgM0UkX46-dQMK5k4tumyOjNo8zcMtU-Fkp4kg7Kk9L6RlwFY9HpGszh33MTL9XSRBMd_A-d"></script>
-
+            <div className="paypal-button-container">
+                <PaypalCheckoutButton product={product} />
+            </div>
         </div>
      );
 }

@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Comment
+from .models import SubUser
 
 class SubUserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Comment
+        model = SubUser
         fields = ['id', 'user', 'subscription']
