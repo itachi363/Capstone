@@ -1,7 +1,8 @@
-const Account = () => {
+const Account = (props) => {
+
     return ( 
         <div>
-            
+
         </div>
      );
 }

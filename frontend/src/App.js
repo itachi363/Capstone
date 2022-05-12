@@ -14,6 +14,8 @@ import SmallPurchasePage from "./pages/PurchasePage/SmallPurchasePage";
 import MediumPurchasePage from "./pages/PurchasePage/MediumPurchasePage";
 import LargePurchasePage from "./pages/PurchasePage/LargePurchasePage";
 import Budget from "./pages/Budget/Budget";
+import Account from "./pages/Accounts/Accounts";
+import ChartPage from "./pages/Chart/Chart";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -24,16 +26,20 @@ import PrivateRoute from "./utils/PrivateRoute";
 import React, {useState} from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import useAuth from "./hooks/useAuth";
 
 
 
 
 function App() {
+  const [user, token] = useAuth();
 
   const [sizeHandler, setSizeHandler] = useState('');
   const [subUser, setSubUser] = useState([])
+  const [subUserAll, setSubUserAll] = useState([])
 
   useEffect(() => {
+    getSubUser();
     getAllSubUser();
   }, []);
 
@@ -42,10 +48,19 @@ function App() {
     setSizeHandler(entries)
   }
 
-  async function getAllSubUser() {
-    const response = await axios.get("http://127.0.0.1:8000/sub_user/auth/");
+  async function getSubUser() {
+    let response = await axios.get("http://127.0.0.1:8000/sub_user/auth/", {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
     console.log(response.data)
     setSubUser(response.data)
+  }
+
+  async function getAllSubUser() {
+    let response = await axios.get("http://127.0.0.1:8000/sub_user/")
+    setSubUserAll(response.data)
   }
 
   return (
@@ -69,7 +84,9 @@ function App() {
           <Route path="/purchaseS" element={<SmallPurchasePage sizeHandler={sizeHandler}/>} />
           <Route path="/purchaseM" element={<MediumPurchasePage sizeHandler={sizeHandler}/>} />
           <Route path="/purchaseL" element={<LargePurchasePage sizeHandler={sizeHandler}/>} />
-          <Route path="/budget" element={<Budget subUser={subUser} refresh={getAllSubUser}/>} />
+          <Route path="/budget" element={<Budget subUser={subUser} refresh={getSubUser}/>} />
+          <Route path="/accounts" element={<Account getAllSubUser={getAllSubUser} />} />
+          <Route path="/chart" element={<ChartPage subUserAll={subUserAll} />} />
 
         </Routes>
         <Footer />

@@ -27,6 +27,16 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link to="/accounts" style={{ textDecoration: "none", color: "white" }}>
+              <b>Accounts</b>
+            </Link>
+          </li>
+          <li>
+            <Link to="/chart" style={{ textDecoration: "none", color: "white" }}>
+              <b>Chart</b>
+            </Link>
+          </li>
+          <li>
             {user ? (
               <button onClick={logoutUser}>Logout</button>
             ) : (
