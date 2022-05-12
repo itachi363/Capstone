@@ -14,14 +14,19 @@ def get_all_sub_user(request):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-@api_view(['POST'])
+@api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
 def user_sub_user(request):
         serializer = SubUserSerializer(data=request.data)
-        if serializer.is_valid():
+        if request.method == 'GET':
+            subUser = SubUser.objects.filter(user_id=request.user.id)
+            serializer = SubUserSerializer(subUser, many=True)
+            return Response(serializer.data)
+        elif serializer.is_valid():
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT'])
 @permission_classes([AllowAny])

@@ -5,3 +5,4 @@ class SubUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubUser
         fields = ['id', 'user', 'subscription']
+        depth = 1

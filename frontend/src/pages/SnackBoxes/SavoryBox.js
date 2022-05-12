@@ -35,9 +35,9 @@ const SavoryBox = (props) => {
     return ( 
         <div>
             <img src={bokksuone} className="boxes"></img>
-            <p>we recommend the savory box.</p>
+            <p className="center">we recommend the savory box.</p>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="center">
                     <div>
                         <h2>
                             Which snackbox would you like?

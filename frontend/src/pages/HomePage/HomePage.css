@@ -1,10 +1,18 @@
 .spacing {
+    text-align: center;
     margin: 2em;
 }
 
 .box {
-    display: flex;
-    justify-content: center;
-    width: 1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
     height: 500px;
+}
+
+body {
+    background-image: url(../Images/backround.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }

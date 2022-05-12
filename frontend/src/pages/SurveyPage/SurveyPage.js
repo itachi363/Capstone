@@ -36,17 +36,17 @@ const SurveyPage = () => {
                     </h2>
                 </div>
                 <div>
-                    <p>Do you like sweet candy</p>
+                    <p>Do you like sweet snacks.</p>
                     <input type="radio" id="sweet" onChange={handleChange} name="fav_flavor" value="sweet"/>
                     <label for="sweet">Sweet</label> 
                 </div>
                 <div>
-                    <p>Do you like seasonal candy</p>
+                    <p>Do you like seasonal snacks.</p>
                     <input type="radio" id="seasonal" onChange={handleChange} name="fav_flavor" value="seasonal"/>
                     <label for="seasonal">Seasonal</label> 
                 </div>
                 <div>
-                    <p>Do you like savory snacks</p>
+                    <p>Do you like savory snacks.</p>
                     <input type="radio" id="savory" onChange={handleChange} name="fav_flavor" value="savory"/>
                     <label for="savory">Savory</label> 
                 </div>

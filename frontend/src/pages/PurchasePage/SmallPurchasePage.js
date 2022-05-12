@@ -1,39 +1,36 @@
 import purchasebokksu from "../Images/purchasebokksu.jpg"
-import PaypalCheckoutButton from "../../components/Paypal/Paypal";
+import React from "react"
+import ButtonWrapper from "../Paypal/PaypalS"
+import "./PurchasePage.css"
 
 const SmallPurchasePage = (props) => {
-    const product = {
-        description: "design+Code React Hooks Course",
-        price: 20
-    }
-
 
     return ( 
         <div>
             <div>
-                <img src={purchasebokksu} className="boxes"></img>
+                <img src={purchasebokksu} className="boxes" alt="purchase"></img>
             </div>
             {props.sizeHandler.map((entry) => {
                 return(
-                    <div>
-                        <h2>
-                            You have selected: 
-                        </h2>
-                        <h3>
-                            {entry.size} snacks
-                        </h3>
-                        <h3>
-                            {entry.flavor} flavor
-                        </h3>
-                        <p>$20</p>
-                        
+                    <div className="center">
+                        <form>
+                            <h2>
+                                You have selected: 
+                            </h2>
+                            <h3>
+                                {entry.size} snacks
+                            </h3>
+                            <h3>
+                                {entry.flavor} flavor
+                            </h3>
+                            <p>$20</p>
+                            <div className="centerButton">
+                                <ButtonWrapper />
+                            </div>
+                        </form>
                     </div>
                 )
             })}
-            
-            <div className="paypal-button-container">
-                <PaypalCheckoutButton product={product} />
-            </div>
         </div>
      );
 }

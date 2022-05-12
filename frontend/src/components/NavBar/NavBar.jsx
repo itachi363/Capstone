@@ -22,6 +22,11 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link to="/budget" style={{ textDecoration: "none", color: "white" }}>
+              <b>Budget</b>
+            </Link>
+          </li>
+          <li>
             {user ? (
               <button onClick={logoutUser}>Logout</button>
             ) : (

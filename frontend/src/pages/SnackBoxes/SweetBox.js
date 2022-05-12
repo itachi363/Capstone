@@ -37,10 +37,10 @@ const SweetBox = (props) => {
         <div>
             <div>
                 <img src={bokksuthree} className="boxes"></img>
-                <p>We recommend the sweet box.</p>
+                <p className="center">We recommend the sweet box.</p>
             </div>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="center">
                     <div>
                         <h2>
                             Which snackbox would you like?
