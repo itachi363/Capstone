@@ -85,7 +85,7 @@ function App() {
           <Route path="/purchaseM" element={<MediumPurchasePage sizeHandler={sizeHandler}/>} />
           <Route path="/purchaseL" element={<LargePurchasePage sizeHandler={sizeHandler}/>} />
           <Route path="/budget" element={<Budget subUser={subUser} refresh={getSubUser}/>} />
-          <Route path="/accounts" element={<Account getAllSubUser={getAllSubUser} />} />
+          <Route path="/accounts" element={<Account subUserAll={subUserAll} />} />
           <Route path="/chart" element={<ChartPage subUserAll={subUserAll} />} />
 
         </Routes>
