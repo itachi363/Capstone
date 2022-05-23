@@ -12,7 +12,11 @@
 }
 
 body {
-    background-image: url(../Images/backround.jpg);
+    background-image: url(../Images/backroundtwo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.whiteText {
+    color: white;
 }

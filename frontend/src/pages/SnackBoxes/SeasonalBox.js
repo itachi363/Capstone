@@ -35,7 +35,7 @@ const SeasonalBox = (props) => {
     return ( 
         <div>
             <img src={bokksutwo} className="boxes"></img>
-            <p className="center">we recommend the regular box.</p>
+            <p className="center">we recommend the seasonal box.</p>
             <form onSubmit={handleSubmit}>
                 <div className="center">
                     <div>

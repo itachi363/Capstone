@@ -1,3 +1,7 @@
 .center {
     text-align: center;
 }
+
+.spin:hover {
+    transform: scale(1.2) rotate(5deg);
+  }

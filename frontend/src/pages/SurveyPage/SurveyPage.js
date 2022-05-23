@@ -51,7 +51,7 @@ const SurveyPage = () => {
                     <label for="savory">Savory</label> 
                 </div>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" className="spin">Submit</button>
                 </div>
             </div>
         </form>
