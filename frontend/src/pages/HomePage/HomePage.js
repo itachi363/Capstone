@@ -37,7 +37,7 @@ const HomePage = () => {
         <img src={bokksuone} className="box"></img>
       </div>
       <div className="spacing">
-        <p>The best box of japanese snacks you can enjoy.</p>
+        <p><a href="https://teamtreehouse.com/vr" target="_blank">The best box of japanese snacks you can enjoy.</a></p>
       </div>
       <div>
         <img src={bokksutwo} className="box"></img>
