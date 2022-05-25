@@ -43,7 +43,7 @@ const HomePage = () => {
         <img src={bokksutwo} className="box"></img>
       </div>
       <div className="spacing">
-        <p>With four seasons of snacks.</p>
+        <p>With <strong>four</strong> seasons of snacks.</p>
       </div>
       <div>
         <img src={bokksuthree} className="box"></img>
@@ -51,6 +51,9 @@ const HomePage = () => {
       <div className="spacing">
         <p>With up to 24 snacks per box.</p>
       </div>
+      {/* Makes a line above content below */}
+      <hr></hr>
+
       <div>
         {/* {cars &&
           cars.map((car) => (
